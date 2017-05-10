@@ -21,7 +21,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     char *vertexShaderCode = malloc((sizeOfFile + 1) * sizeof(char));
     fread(vertexShaderCode, 1, (sizeOfFile + 1), fp);
     fclose(fp);
-    vertexShaderCode[strcspn(vertexShaderCode, "\r\n")] = '\n';
+    vertexShaderCode[sizeOfFile] = '\0';
     //printf("vertexShaderCode %s\n", vertexShaderCode);
 
     char const *vertexSourcePointer = vertexShaderCode;
@@ -50,7 +50,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     char *fragmentShaderCode = malloc((sizeOfFile + 1) * sizeof(char));
     fread(fragmentShaderCode, 1, (sizeOfFile + 1), fp);
     fclose(fp);
-    vertexShaderCode[strcspn(vertexShaderCode, "\r\n")] = '\n';
+    fragmentShaderCode[sizeOfFile] = '\0';
     //printf("fragmentShaderCode %s\n", fragmentShaderCode);
     
     char const *fragmentSourcePointer = fragmentShaderCode;
