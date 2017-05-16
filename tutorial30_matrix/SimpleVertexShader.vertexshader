@@ -1,0 +1,14 @@
+#version 330 core
+
+uniform mat4 modelViewProjectionMatrix;
+
+in vec3 position;
+in vec2 texcoord;
+
+out vec2 fragTexcoord;
+
+void main() {
+    gl_Position = modelViewProjectionMatrix * vec4(position, 1.0);
+
+    fragTexcoord = texcoord;
+}
