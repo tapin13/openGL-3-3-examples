@@ -114,6 +114,7 @@ int main(int argc, char** argv) {
     
     glGenBuffers(3, cubeVBO);
     
+    
     positionLocation = glGetAttribLocation(programId, "position");
     if(positionLocation == -1) {
         fprintf(stderr, "positionLocation error\n");
@@ -161,8 +162,6 @@ int main(int argc, char** argv) {
     GLint matrixLocation;
     matrixLocation = glGetUniformLocation(programId, "modelViewProjectionMatrix");
     glUniformMatrix4fv(matrixLocation, 1, GL_TRUE, modelViewProjectionMatrix);
-
-    glBindVertexArray(cubeVAO);
 
     /*************************************************************************/
     
