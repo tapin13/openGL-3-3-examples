@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Don't use old openGL
     
     GLFWwindow *window;
-    window = glfwCreateWindow(640, 480, "Tutorial 2.3 - Two VAO, Two VBO -> Two triangles", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Tutorial 2.4 - Two fragment shader -> Two triangles", NULL, NULL);
     if(window == NULL) {
         fprintf(stderr, "Failed to open GLFW windows. If you have an Intel GPU, they are not 3.3 compatible.");
         return EXIT_FAILURE;
