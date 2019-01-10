@@ -1,4 +1,4 @@
-# OpenGL 3.3 Tutorial - Shaders Uniforms
+# OpenGL 3.3 Tutorial - Shaders vertex attribute
 
 Tutorial from https://learnopengl.com/Getting-started/Shaders
 
