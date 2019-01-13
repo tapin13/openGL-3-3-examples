@@ -2,7 +2,7 @@
 
 Tutorial from https://learnopengl.com/Getting-started/Textures
 
-tutorial42_texture_units
+Set multiple textures at once in a fragment shader
 
 ![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorial42_texture_units/Screenshot.png)
 
