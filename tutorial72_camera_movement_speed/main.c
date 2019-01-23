@@ -306,7 +306,7 @@ void processInput(GLFWwindow *window, GLfloat *cameraPosition, GLfloat *cameraFr
     normalize_cross_front_up[1] = cameraFront[1];
     normalize_cross_front_up[2] = cameraFront[2];
     vector_cross(normalize_cross_front_up, cameraUp);
-    //vector_normalize(normalize_cross_front_up);
+    vector_normalize(normalize_cross_front_up);
     
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
         cameraPosition[0] -= cameraSpeed * normalize_cross_front_up[0];
