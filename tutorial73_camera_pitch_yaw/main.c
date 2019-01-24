@@ -20,8 +20,6 @@ void processInput(GLFWwindow *window, GLfloat *cameraPosition, GLfloat *cameraFr
 void mouse_callback(GLFWwindow *window, double mouse_x, double mouse_y);
 void processMouse(double *last_mouse_x, double *last_mouse_y, double current_mouse_x, double current_mouse_y, float *yaw, float *pitch);
 
-GLfloat cameraFront[3] = { 0.0f, 0.0f, -1.0f };
-
 int main(int argc, char** argv) {
     if(!glfwInit()) {
         fprintf(stderr, "Failed to initialize GLFW.");
@@ -219,6 +217,7 @@ int main(int argc, char** argv) {
 
     // camera
     GLfloat cameraPosition[3] = { 0.0f, 0.0f, 3.0f };
+    GLfloat cameraFront[3] = { 0.0f, 0.0f, -1.0f };
     
     GLfloat cameraUp[3] = { 0.0f, 1.0f, 0.0f };
     GLfloat cameraPositionFront[3] = { 
