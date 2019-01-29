@@ -1,4 +1,4 @@
-# OpenGL 3.3 Tutorial - Materials
+# OpenGL 3.3 Tutorial - Lighting
 
 Tutorial from https://learnopengl.com/Lighting/Lighting-maps
 
