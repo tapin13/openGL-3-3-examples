@@ -7,16 +7,16 @@ Tweaking the lights attributes, create the different atmospheres.
 
 ### Desert
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII0_multiple_lights/Screenshot.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII1_atmospheres/Screenshot.png)
 
 ### Factory
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII0_multiple_lights/Screenshot1.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII1_atmospheres/Screenshot1.png)
 
 ### Horror
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII0_multiple_lights/Screenshot2.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII1_atmospheres/Screenshot2.png)
 
 ### Biochemical lab
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII0_multiple_lights/Screenshot3.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXII1_atmospheres/Screenshot3.png)
