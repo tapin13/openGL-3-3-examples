@@ -10,7 +10,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     FILE *fp;
     int sizeOfFile;
     
-    fp = fopen(vertex_file_path, "r");
+    fp = fopen(vertex_file_path, "rb");
     if(fp == NULL) {
         fprintf(stderr, "vertex shader file not found\n");
         return -1;
@@ -22,7 +22,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     char *vertexShaderCode = malloc((sizeOfFile + 1) * sizeof(char));
     fread(vertexShaderCode, 1, (sizeOfFile + 1), fp);
     fclose(fp);
-    vertexShaderCode[sizeOfFile + 1] = 0;
+    vertexShaderCode[sizeOfFile] = 0;
     printf("vertexShaderCode %s\n", vertexShaderCode);
 
     char const *vertexSourcePointer = vertexShaderCode;
@@ -40,7 +40,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
         return -1;
     }
     
-    fp = fopen(fragment_file_path, "r");
+    fp = fopen(fragment_file_path, "rb");
     if(fp == NULL) {
         fprintf(stderr, "fragment shader file not found\n");
         return -1;
@@ -52,7 +52,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     char *fragmentShaderCode = malloc((sizeOfFile + 1) * sizeof(char));
     fread(fragmentShaderCode, 1, (sizeOfFile + 1), fp);
     fclose(fp);
-    fragmentShaderCode[sizeOfFile + 1] = 0;
+    fragmentShaderCode[sizeOfFile] = 0;
     //printf("fragmentShaderCode %s\n", fragmentShaderCode);
     
     char const *fragmentSourcePointer = fragmentShaderCode;

@@ -140,4 +140,3 @@ vec3 CalculationSpotLight(SpotLight light, vec3 normal, vec3 FragPosition, vec3 
 
     return (ambient + diffuse + specular);
 }
-
