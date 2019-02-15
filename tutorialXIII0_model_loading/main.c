@@ -13,6 +13,8 @@
 #define true  1
 #define false 0
 
+#define POINT_LIGHTS 4
+
 double current_mouse_x = -1.0, current_mouse_y = -1.0;
 double current_zoom_y = 0.0;
 
@@ -132,8 +134,7 @@ int main(int argc, char** argv) {
         { 1.0f, 1.0f, 1.0f }, // Specular
     };
 
-    static const uint8_t POINT_LIGHTS = 4;
-    float pointLightPositions[4][3] = {
+    float pointLightPositions[][3] = {
 	{ 0.7f,  0.2f,  2.0f }, // x-y-z
 	{ 2.3f, -3.3f, -4.0f },
 	{ -4.0f,  2.0f, -12.0f },
@@ -157,7 +158,7 @@ int main(int argc, char** argv) {
 //    };
     
     // horror
-    float pointLightColors[4][3] = {
+    float pointLightColors[][3] = {
         { 0.1f, 0.1f, 0.1f }, // r-g-b
         { 0.1f, 0.1f, 0.1f },
         { 0.1f, 0.1f, 0.1f },

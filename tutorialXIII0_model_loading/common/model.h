@@ -9,6 +9,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#define MAX_CHARS_LINE 255 // maximum number of characters per line
 
 typedef struct {
     char name[255];

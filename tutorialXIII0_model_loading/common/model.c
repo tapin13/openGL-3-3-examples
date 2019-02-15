@@ -31,8 +31,7 @@ char model_load(char *filepath, model *_model) {
         return -1;
     }
     
-    uint8_t MAXCHAR = 255;
-    char str[MAXCHAR];
+    char str[MAX_CHARS_LINE];
     char objects[100][255];
     char object_mtllib[255];
     
@@ -48,7 +47,7 @@ char model_load(char *filepath, model *_model) {
     int normals_counter = 0;
     int textures_counter = 0;
     int index_counter = 0;
-    while (fgets(str, MAXCHAR, fp) != NULL) {
+    while (fgets(str, MAX_CHARS_LINE, fp) != NULL) {
         //printf("%s", str);
         if(strncmp(str, "o ", 2) == 0) {
             sscanf(str, "o %s", &objects[_model->objects_count][0]);
@@ -149,7 +148,9 @@ char model_load(char *filepath, model *_model) {
 
     int vnt_count = 0;
     int vnt_i = 0;
-    float vnt[index_counter * (3 + 3 + 2)]; // 3 - vetex 3 normal 2 texture
+    uint32_t vnt_size = index_counter * (3 + 3 + 2) * sizeof(float);
+    float *vnt;
+    vnt = (float*)malloc(vnt_size); // 3 vetex, 3 normal, 2 texture
 
     for(i = 0; i < index_counter; i++) {
         vnt[vnt_i + 0] = vertexes[indexes_v[i]][0];
@@ -195,14 +196,15 @@ char model_load(char *filepath, model *_model) {
 
     bind_mtl_to_object(_model, mtls, object_mtls, mtls_count);
 
-    set_VAO_VBO(_model, vnt, sizeof(vnt));
+    set_VAO_VBO(_model, vnt, vnt_size);
     
+    free(vnt);
+
     return 0;
 }
 
 void texture_load(char *model_path, char *filename, GLuint textureID) {
-    uint8_t MAXCHAR = 255;
-    char str[MAXCHAR];
+    char str[MAX_CHARS_LINE];
 
     uint8_t *textureData = NULL;
     uint32_t textureSize[3] = { 0, 0, 0 }; // width, height, colors
@@ -249,8 +251,7 @@ char load_mtls(char *model_path, char *mtllib, mtl *mtls, int *mtls_count) {
     //printf("filepath_mtl to open %s\n", filepath_mtl);
 
     FILE *fp;
-    int MAXCHAR = 255;
-    char str[MAXCHAR];
+    char str[MAX_CHARS_LINE];
     
     fp = fopen(filepath_mtl, "rb");
     if(fp == NULL) {
@@ -260,7 +261,7 @@ char load_mtls(char *model_path, char *mtllib, mtl *mtls, int *mtls_count) {
 
     *mtls_count = -1;
     
-    while (fgets(str, MAXCHAR, fp) != NULL) {
+    while (fgets(str, MAX_CHARS_LINE, fp) != NULL) {
         //printf("%s", str);
         if(strncmp(str, "newmtl ", 7) == 0) {
             (*mtls_count)++;
