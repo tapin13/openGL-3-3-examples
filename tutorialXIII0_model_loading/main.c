@@ -343,9 +343,9 @@ int main(int argc, char** argv) {
     GLuint lightColorID = glGetUniformLocation(lightProgramId, "color");    
     
     
-    GLfloat modelMatrix[4][4] = {};
-    GLfloat viewMatrix[4][4] = {};
-    GLfloat projectionMatrix[4][4] = {};
+    GLfloat modelMatrix[4][4];
+    GLfloat viewMatrix[4][4];
+    GLfloat projectionMatrix[4][4];
     
     matrix_identity((GLfloat *)modelMatrix);
     matrix_identity((GLfloat *)viewMatrix);

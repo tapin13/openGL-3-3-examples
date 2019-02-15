@@ -1,5 +1,5 @@
 LDLIBS=-lglfw3 -lGL -lGLEW -lm -lX11 -lpthread -ldl
-CFLAGS=-Wall
+CFLAGS=-Wall -std=c11 -pedantic 
 SOURCES=main.c common/bmp_load.c matrix.c common/model.c
 TARGET=main
 

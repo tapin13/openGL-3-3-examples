@@ -7,6 +7,8 @@
 
 #include <GL/glew.h>
 
+# define M_PI		3.14159265358979323846	/* pi */
+
 // angle convert degree to radian
 float deg2rad(float angle);
 
