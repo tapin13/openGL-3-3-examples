@@ -26,7 +26,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     //printf("vertexShaderCode %s\n", vertexShaderCode);
 
     char const *vertexSourcePointer = vertexShaderCode;
-    glShaderSource(vertexShaderId, 1, &vertexSourcePointer, NULL);
+    glShaderSource(vertexShaderId, 1, &vertexSourcePointer, (const GLint*)&sizeOfFile);
     glCompileShader(vertexShaderId);
     glGetShaderiv(vertexShaderId, GL_COMPILE_STATUS, &result);
     if(result == GL_FALSE) {
@@ -56,7 +56,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     //printf("fragmentShaderCode %s\n", fragmentShaderCode);
     
     char const *fragmentSourcePointer = fragmentShaderCode;
-    glShaderSource(fragmentShaderId, 1, &fragmentSourcePointer, NULL);
+    glShaderSource(fragmentShaderId, 1, &fragmentSourcePointer, (const GLint*)&sizeOfFile);
     glCompileShader(fragmentShaderId);
     glGetShaderiv(fragmentShaderId, GL_COMPILE_STATUS, &result);
     if(result == GL_FALSE) {
