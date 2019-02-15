@@ -5,9 +5,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include "common/loadShader.c"
+#include "common/loadShader.h"
 
-#include "matrix.h"
+#include "common/matrix.h"
 #include "common/model.h"
 
 #define true  1

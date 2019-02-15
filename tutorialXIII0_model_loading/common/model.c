@@ -151,6 +151,10 @@ char model_load(char *filepath, model *_model) {
     uint32_t vnt_size = index_counter * (3 + 3 + 2) * sizeof(float);
     float *vnt;
     vnt = (float*)malloc(vnt_size); // 3 vetex, 3 normal, 2 texture
+    if(vnt == NULL) {
+        fprintf(stderr, "Failed to malloc of size %d\n", vnt_size);
+        return -1;
+    }
 
     for(i = 0; i < index_counter; i++) {
         vnt[vnt_i + 0] = vertexes[indexes_v[i]][0];

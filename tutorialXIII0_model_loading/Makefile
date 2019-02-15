@@ -1,6 +1,6 @@
 LDLIBS=-lglfw3 -lGL -lGLEW -lm -lX11 -lpthread -ldl
 CFLAGS=-Wall -std=c11 -pedantic -Werror=vla
-SOURCES=main.c common/bmp_load.c matrix.c common/model.c
+SOURCES=main.c common/bmp_load.c common/matrix.c common/model.c common/loadShader.c
 TARGET=main
 
 all: $(SOURCES) 

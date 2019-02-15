@@ -3,7 +3,7 @@
 char bmp_load(const char *filename, uint8_t **image_data, uint32_t *width, uint32_t *height, uint32_t *colors) {
     uint8_t *data = NULL;
     uint32_t size;
-    int i = 0;
+    uint32_t i = 0;
     
     FILE *fp;
     
