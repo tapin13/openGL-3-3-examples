@@ -255,11 +255,11 @@ int main(int argc, char** argv) {
     }
 
     model nanosuit;
-    static const GLfloat modelPositions[3] = { 0.0f,  -7.5f,  -13.0f };
-    model_load("models/nanosuit/nanosuit.obj", &nanosuit);
+    //static const GLfloat modelPositions[3] = { 0.0f,  -7.5f,  -13.0f };
+    //model_load("models/nanosuit/nanosuit.obj", &nanosuit);
     //model_load("models/gun/gun.obj", &nanosuit);
-    //model_load("models/box/box.obj", &nanosuit);
-    //static const GLfloat modelPositions[3] = { 0.0f,  0.0f,  0.0f };
+    model_load("models/box/box.obj", &nanosuit);
+    static const GLfloat modelPositions[3] = { 0.0f,  0.0f,  0.0f };
     //model_load("models/skull/skull.obj", &nanosuit);
     
     model_set_uniform(&nanosuit, programId);

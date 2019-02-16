@@ -37,12 +37,22 @@ char model_load(char *filepath, model *_model) {
     
     char object_mtls[100][255];
     int object_mtls_count = 0;
+    /*
     float vertexes[100000][3];
     float normals[100000][3];
     float textures[100000][2];
     GLuint indexes_v[100000];
     GLuint indexes_t[100000];
     GLuint indexes_n[100000];
+    */
+
+    float *vertexes = (float*)malloc(100000 * 3 * sizeof(float));
+    float *normals = (float*)malloc(100000 * 3 * sizeof(float));
+    float *textures = (float*)malloc(100000 * 2 * sizeof(float));
+    GLuint *indexes_v = (GLuint*)malloc(100000 * 3 * sizeof(GLuint));
+    GLuint *indexes_t = (GLuint*)malloc(100000 * 3 * sizeof(GLuint));
+    GLuint *indexes_n = (GLuint*)malloc(100000 * 3 * sizeof(GLuint));
+
     int vertex_counter = 0;
     int normals_counter = 0;
     int textures_counter = 0;
@@ -64,41 +74,41 @@ char model_load(char *filepath, model *_model) {
         } else if(strncmp(str, "v ", 2) == 0) {
 //                printf("%s", str);
             sscanf(str, "v %f %f %f", 
-                    &vertexes[vertex_counter][0],
-                    &vertexes[vertex_counter][1],
-                    &vertexes[vertex_counter][2]
+                    &vertexes[vertex_counter + 0],
+                    &vertexes[vertex_counter + 1],
+                    &vertexes[vertex_counter + 2]
                     );
-//                printf("vertexes: %f %f %f\n"
-//                        , vertexes[vertex_counter + 0]
-//                        , vertexes[vertex_counter + 1]
-//                        , vertexes[vertex_counter + 2]
-//                        );
-            vertex_counter++;
+            //    printf("vertexes: %f %f %f\n"
+            //            , vertexes[vertex_counter + 0]
+            //            , vertexes[vertex_counter + 1]
+            //            , vertexes[vertex_counter + 2]
+            //            );
+            vertex_counter += 3;
         } else if(strncmp(str, "vn ", 3) == 0) {
 //                printf("%s", str); 
             sscanf(str, "vn %f %f %f", 
-                    &normals[normals_counter][0],
-                    &normals[normals_counter][1],
-                    &normals[normals_counter][2]
+                    &normals[normals_counter + 0],
+                    &normals[normals_counter + 1],
+                    &normals[normals_counter + 2]
                     );
 //                printf("normalszz: %f %f %f\n"
 //                        , normalszz[normals_counter + 0]
 //                        , normalszz[normals_counter + 1]
 //                        , normalszz[normals_counter + 2]
 //                        );
-            normals_counter++;
+            normals_counter += 3;
         } else if(strncmp(str, "vt ", 3) == 0) {
 //                printf("%s", str);
             sscanf(str, "vt %f %f", 
-                    &textures[textures_counter][0],
-                    &textures[textures_counter][1]
+                    &textures[textures_counter + 0],
+                    &textures[textures_counter + 1]
                     );
 //                printf("vertexes: %f %f %f\n"
 //                        , vertexes[vertex_counter + 0]
 //                        , vertexes[vertex_counter + 1]
 //                        , vertexes[vertex_counter + 2]
 //                        );
-            textures_counter++;
+            textures_counter += 2;
         } else if(strncmp(str, "f ", 2) == 0) {
             //printf("%s", str);
             sscanf(str, "f %u/%u/%u %u/%u/%u %u/%u/%u", 
@@ -157,16 +167,16 @@ char model_load(char *filepath, model *_model) {
     }
 
     for(i = 0; i < index_counter; i++) {
-        vnt[vnt_i + 0] = vertexes[indexes_v[i]][0];
-        vnt[vnt_i + 1] = vertexes[indexes_v[i]][1];
-        vnt[vnt_i + 2] = vertexes[indexes_v[i]][2];
+        vnt[vnt_i + 0] = vertexes[indexes_v[i] * 3 + 0];
+        vnt[vnt_i + 1] = vertexes[indexes_v[i] * 3 + 1];
+        vnt[vnt_i + 2] = vertexes[indexes_v[i] * 3 + 2];
         
-        vnt[vnt_i + 3] = normals[indexes_n[i]][0];
-        vnt[vnt_i + 4] = normals[indexes_n[i]][1];
-        vnt[vnt_i + 5] = normals[indexes_n[i]][2];
+        vnt[vnt_i + 3] = normals[indexes_n[i] * 3 + 0];
+        vnt[vnt_i + 4] = normals[indexes_n[i] * 3 + 1];
+        vnt[vnt_i + 5] = normals[indexes_n[i] * 3 + 2];
         
-        vnt[vnt_i + 6] = textures[indexes_t[i]][0];
-        vnt[vnt_i + 7] = textures[indexes_t[i]][1];
+        vnt[vnt_i + 6] = textures[indexes_t[i] * 2 + 0];
+        vnt[vnt_i + 7] = textures[indexes_t[i] * 2 + 1];
 
         vnt_count++;
         vnt_i+=8;

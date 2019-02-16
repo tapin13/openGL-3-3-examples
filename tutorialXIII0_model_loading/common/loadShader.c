@@ -23,7 +23,7 @@ GLuint loadShader(const char *vertex_file_path, const char *fragment_file_path) 
     fread(vertexShaderCode, 1, (sizeOfFile + 1), fp);
     fclose(fp);
     vertexShaderCode[sizeOfFile] = 0;
-    printf("vertexShaderCode %s\n", vertexShaderCode);
+    //printf("vertexShaderCode %s\n", vertexShaderCode);
 
     char const *vertexSourcePointer = vertexShaderCode;
     glShaderSource(vertexShaderId, 1, &vertexSourcePointer, (const GLint*)&sizeOfFile);
