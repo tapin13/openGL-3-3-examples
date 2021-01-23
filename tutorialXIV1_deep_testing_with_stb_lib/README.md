@@ -1,6 +1,6 @@
 # OpenGL 3.3 Tutorial - Depth testing add using by stb image loader
 
-If before there was use by own bmp image loader, now we use stb lib to load images.
+If before there was use by own bmp image loader, now we use [stb lib](https://github.com/nothings/stb) to load images.
 
 Tutorial from https://learnopengl.com/Advanced-OpenGL/Depth-testing
 
