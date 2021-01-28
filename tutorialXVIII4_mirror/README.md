@@ -6,5 +6,6 @@ Framebuffer to create a rear-view mirror.
 
 Screenshot examples 
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXVIII0_framebuffer/Screenshot.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXVIII4_mirror/Screenshot.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXVIII4_mirror/Screenshot_1.png)
 
