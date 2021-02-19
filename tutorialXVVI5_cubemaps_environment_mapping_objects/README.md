@@ -1,6 +1,7 @@
 # OpenGL 3.3 Tutorial - Using Assimp lib to build obj files
 
 sudo apt install libassimp-dev
+
 Makefile add LDLIBS -lassimp
 
 
