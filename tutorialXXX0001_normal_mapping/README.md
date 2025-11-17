@@ -7,4 +7,4 @@ Run: make .PHONY ; ./main
 ![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0001_normal_mapping/Screenshot_1.png)
 ![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0001_normal_mapping/Screenshot_2.png)
 
-https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0001_normal_mapping/lv_0_20251115230327.mp4
+<video src="https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0001_normal_mapping/lv_0_20251115230327.mp4"></video>
