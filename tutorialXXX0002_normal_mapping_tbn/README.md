@@ -5,5 +5,5 @@ Part 2 - TBN.
 
 Run: make .PHONY ; ./main
 
-![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0001_normal_mapping_tbn/Screenshot_1.png)
+![alt text](https://github.com/tapin13/openGL-3-3-examples/blob/master/tutorialXXX0002_normal_mapping_tbn/Screenshot_1.png)
 
