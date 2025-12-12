@@ -31,9 +31,13 @@ void main()
     mat3 normalMatrix = transpose(inverse(mat3(model)));
     vec3 T = normalize(normalMatrix * inTangent);
     vec3 N = normalize(normalMatrix * inNormal);
-    // vec3 B = normalize(normalMatrix * inBitangent);
-    T = normalize(T - dot(T, N) * N);
+    vec3 B = normalize(normalMatrix * inBitangent);
+
+    /*
+    Alternative if don't use bitangent
+    T = normalize(T - dot(T, N) * N); 
     vec3 B = cross(N, T);
+    */
 
     mat3 TBN = transpose(mat3(T, B, N));
     vs_out.TangentLightPosition = TBN * lightPosition;
